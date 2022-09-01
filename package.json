@@ -1,0 +1,24 @@
+{
+  "name": "http",
+  "version": "1.0.0",
+  "description": "http lecture",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IntriguedSayan/http.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IntriguedSayan/http/issues"
+  },
+  "homepage": "https://github.com/IntriguedSayan/http#readme",
+  "dependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
