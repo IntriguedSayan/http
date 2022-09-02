@@ -11,7 +11,12 @@ const server=http.createServer((req,res)=>{
            
         })
         if(req.url==="/"){
+            res.setHeader("Content-type","text/plain") //text/html for html file
+            // res.write("<h1>Welcome</h1>")
+            //application/json for json
+            //res.end(JSON.stringify({name:"masai"}))
             res.write("WELCOME")
+           
             res.end("!")
         }else if(req.url==="/contact"){
         
@@ -21,16 +26,24 @@ const server=http.createServer((req,res)=>{
             //send the data
             const data=fs.readFileSync("./data.txt",{encoding:"utf-8"})
             return res.end(data)
+        }else if(req.url==="/details2"){
+            const data=fs.createReadStream("./data.txt",{encoding:"utf-8"})
+            data.pipe(res)
         }
     }
-    // else if(req.method==="POST"){
-    //     if(req.url==="/adddetails"){
+    else if(req.method==="POST"){
+        if(req.url==="/adddetails"){
+            req.on("data",(data)=>{
+                console.log(data)
+            })
+            req.on("end",()=>{
+                res.end("Thanks for giving data")
+            })
+        }
+    }
 
-    //     }
-    // }
-
-    // res.write("xyz")
-    // res.end("!")
+    res.write("xyz")
+    res.end("!")
 })
 
 server.listen(8080)

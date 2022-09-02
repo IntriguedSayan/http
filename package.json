@@ -2,9 +2,9 @@
   "name": "http",
   "version": "1.0.0",
   "description": "http lecture",
-  "main": "indexone.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon indexone.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
