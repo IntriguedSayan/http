@@ -9,17 +9,21 @@ const server=http.createServer((req,res)=>{
 
         if(req.url==="/"){
         
-         fs.readdir("./",(err,files)=>{
-                res.end(JSON.stringify(files))
-                // res.end("OK")
-           })
-      
+         const data=fs.readdirSync("./",{encoding:"utf-8"})
+          // res.end(JSON.stringify(data))
+          data.forEach((elem)=>(
+            res.write(`<a href="/public"><li>${JSON.stringify(elem)}</li></li></a>`)
+          ))
+          res.end()
         }
         if(req.url==="/public"){
             
-          fs.readdir("./public",(err,files)=>{
-                res.end(JSON.stringify(files))
-          })
+         const files=fs.readdirSync("./public",{encoding:"utf-8"})
+                files.forEach((elem)=>(
+                  res.write(`<a href="/public/other"><li>${JSON.stringify(elem)}</li></li></a>`)
+                ))
+          
+          res.end()
 
         }
         if(req.url==="/public/other"){
