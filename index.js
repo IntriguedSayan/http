@@ -11,7 +11,7 @@ const server=http.createServer((req,res)=>{
            
         })
         if(req.url==="/"){
-            res.write("WELCOM")
+            res.write("WELCOME")
             res.end("!")
         }else if(req.url==="/contact"){
         

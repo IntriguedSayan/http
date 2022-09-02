@@ -1,1 +1,8 @@
-GET /GET /favicon.icoGET /contactGET /favicon.icoGET /detailsGET /favicon.ico
+GET /GET /favicon.icoGET /contactGET /favicon.icoGET /detailsGET /favicon.icoGET /
+GET /favicon.ico
+GET /
+GET /favicon.ico
+GET /favicon.ico
+GET /
+GET /favicon.ico
+GET /favicon.ico
